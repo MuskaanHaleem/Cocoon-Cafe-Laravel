@@ -1,17 +1,32 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.admin') <!-- Extend the admin layout -->
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+@section('title', 'Dashboard')
+
+@section('content')
+<div class="container">
+    <h1 class="text-center mb-4">Welcome to Cocoon Cafe Admin Panel</h1>
+
+    <!-- Example Cards for Admin Metrics -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Categories</h5>
+                    <p class="card-text">Manage your categories efficiently.</p>
+                    <a href="{{ route('categories.index') }}" class="btn btn-primary">View Categories</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Menu Items</h5>
+                    <p class="card-text">Manage your menu items.</p>
+                    <a href="{{ route('menu-items.index') }}" class="btn btn-primary">View Menu Items</a>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+@endsection
+

@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ $item->name }}</td>
                     <td>RS {{ $item->price }}</td>
-                    <td>{{ $item->category }}</td>
+                    <td>{{ $item->category->name ?? 'N/A' }}</td> <!-- Updated category display -->
                     <td><img src="{{ $item->image }}" alt="{{ $item->name }}" width="100"></td>
                     <td>
                         <a href="{{ route('menu-items.edit', $item->id) }}" class="btn btn-sm btn-warning">Edit</a>

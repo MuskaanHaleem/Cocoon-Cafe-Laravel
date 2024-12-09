@@ -16,9 +16,12 @@ class MenuItem extends Model
      */
     protected $fillable = [
         'name',
-        'description',
         'price',
-        'category',
+        'category_id',
         'image',
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

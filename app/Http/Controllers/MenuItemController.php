@@ -4,30 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MenuItem;
+use App\Models\Category;
 
 class MenuItemController extends Controller
 {
-
     public function showOrderPage()
-{
-    $menuItems = MenuItem::all();
-    return view('order', compact('menuItems'));
-}
+    {
+        $menuItems = MenuItem::with('category')->get(); // Load categories for the menu items
+        $categories = Category::all();
+        return view('order', compact('categories', 'menuItems'));
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index() {
-        $menuItems = MenuItem::all();
+        $menuItems = MenuItem::with('category')->get(); // Eager load category relationship
         return view('menu-items.index', compact('menuItems'));
-    }    
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create() {
-        return view('menu-items.create');
+        $categories = Category::all(); // Fetch all categories for the dropdown
+        return view('menu-items.create', compact('categories'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -35,19 +38,12 @@ class MenuItemController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'category' => 'required',
+            'category_id' => 'required|exists:categories,id', // Ensure the category exists
             'image' => 'required|url',
         ]);
+
         MenuItem::create($validated);
         return redirect()->route('menu-items.index')->with('success', 'Menu item added successfully!');
-    }    
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
     }
 
     /**
@@ -55,8 +51,9 @@ class MenuItemController extends Controller
      */
     public function edit($id) {
         $menuItem = MenuItem::findOrFail($id);
-        return view('menu-items.edit', compact('menuItem'));
-    }    
+        $categories = Category::all(); // Fetch all categories for the dropdown
+        return view('menu-items.edit', compact('menuItem', 'categories'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -65,14 +62,15 @@ class MenuItemController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'category' => 'required',
+            'category_id' => 'required|exists:categories,id', // Ensure the category exists
             'image' => 'required|url',
         ]);
+
         $menuItem = MenuItem::findOrFail($id);
         $menuItem->update($validated);
         return redirect()->route('menu-items.index')->with('success', 'Menu item updated successfully!');
     }
-    
+
     /**
      * Remove the specified resource from storage.
      */
@@ -81,5 +79,29 @@ class MenuItemController extends Controller
         $menuItem->delete();
         return redirect()->route('menu-items.index')->with('success', 'Menu item deleted successfully!');
     }
+
+    public function filterRecipes(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+        $categoryId = $request->input('category');
     
+        // Query the menu items based on search term and category
+        $query = MenuItem::query();
+    
+        if ($searchTerm) {
+            $query->where('name', 'LIKE', '%' . $searchTerm . '%');
+        }
+    
+        if ($categoryId && $categoryId !== 'all') {
+            $query->where('category_id', $categoryId);
+        }
+    
+        $menuItems = $query->get();
+    
+        // Return the filtered menu items as JSON
+        return response()->json($menuItems);
+    }
+    
+
+
 }
