@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name'); // Menu item name
             $table->decimal('price', 8, 2); // Item price
             $table->string('category'); // Item category
-            $table->string('image'); // Image URL
+            $table->string('image'); // Image 
             $table->timestamps(); // Created and updated timestamps
         });
         

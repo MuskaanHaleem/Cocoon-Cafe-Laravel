@@ -10,71 +10,77 @@ class MenuItemController extends Controller
 {
     public function showOrderPage()
     {
-        $menuItems = MenuItem::with('category')->get(); // Load categories for the menu items
+        $menuItems = MenuItem::with('category')->get();
         $categories = Category::all();
         return view('order', compact('categories', 'menuItems'));
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function index() {
-        $menuItems = MenuItem::with('category')->get(); // Eager load category relationship
+    public function index()
+    {
+        $menuItems = MenuItem::with('category')->get();
         return view('menu-items.index', compact('menuItems'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create() {
-        $categories = Category::all(); // Fetch all categories for the dropdown
+    public function create()
+    {
+        $categories = Category::all();
         return view('menu-items.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $validated = $request->validate([
-            'name' => 'required',
+            'name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'category_id' => 'required|exists:categories,id', // Ensure the category exists
-            'image' => 'required|url',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
-
+    
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $fileName = time() . '.' . $image->getClientOriginalExtension(); // Example: 1696601234.jpg
+            $image->move(public_path('images'), $fileName); // Save image to public/images
+            $validated['image'] = 'images/' . $fileName; // Save path to the database
+        }
+    
         MenuItem::create($validated);
+    
         return redirect()->route('menu-items.index')->with('success', 'Menu item added successfully!');
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id) {
+    
+    
+    public function edit($id)
+    {
         $menuItem = MenuItem::findOrFail($id);
-        $categories = Category::all(); // Fetch all categories for the dropdown
+        $categories = Category::all();
         return view('menu-items.edit', compact('menuItem', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $validated = $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'category_id' => 'required|exists:categories,id', // Ensure the category exists
-            'image' => 'required|url',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         $menuItem = MenuItem::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $fileName = time() . '.' . $image->getClientOriginalExtension(); // Example: 1696601234.jpg
+            $image->move(public_path('images'), $fileName); // Save image to public/images
+            $validated['image'] = 'images/' . $fileName; // Save path to the database
+        }
+
         $menuItem->update($validated);
         return redirect()->route('menu-items.index')->with('success', 'Menu item updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $menuItem = MenuItem::findOrFail($id);
         $menuItem->delete();
         return redirect()->route('menu-items.index')->with('success', 'Menu item deleted successfully!');
@@ -84,24 +90,18 @@ class MenuItemController extends Controller
     {
         $searchTerm = $request->input('searchTerm');
         $categoryId = $request->input('category');
-    
-        // Query the menu items based on search term and category
+
         $query = MenuItem::query();
-    
+
         if ($searchTerm) {
             $query->where('name', 'LIKE', '%' . $searchTerm . '%');
         }
-    
+
         if ($categoryId && $categoryId !== 'all') {
             $query->where('category_id', $categoryId);
         }
-    
+
         $menuItems = $query->get();
-    
-        // Return the filtered menu items as JSON
         return response()->json($menuItems);
     }
-    
-
-
 }

@@ -20,7 +20,7 @@
                     <td>{{ $item->name }}</td>
                     <td>RS {{ $item->price }}</td>
                     <td>{{ $item->category->name ?? 'N/A' }}</td> <!-- Updated category display -->
-                    <td><img src="{{ $item->image }}" alt="{{ $item->name }}" width="100"></td>
+                    <td><img src="{{ asset($item->image) }}" alt="{{ $item->name }}" width="100" class="img-thumbnail"></td>
                     <td>
                         <a href="{{ route('menu-items.edit', $item->id) }}" class="btn btn-sm btn-warning">Edit</a>
                         <form action="{{ route('menu-items.destroy', $item->id) }}" method="POST" style="display:inline;">

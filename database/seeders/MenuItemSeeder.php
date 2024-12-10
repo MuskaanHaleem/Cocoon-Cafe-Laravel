@@ -18,7 +18,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Delicious croissant sandwich with fresh veggies.',
         'price' => 1000,
         'category' => 'breakfast',
-        'image' => 'https://www.culinaryhill.com/wp-content/uploads/2014/08/Turkey-Avocado-BLT-Croissant-Sandwich-Culinary-Hill-square.jpg',
+        'image' => 'images/1.jpg',
     ]);
 
     MenuItem::create([
@@ -26,7 +26,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Healthy breakfast with eggs and veggies.',
         'price' => 850,
         'category' => 'breakfast',
-        'image' => 'https://i.pinimg.com/736x/a6/52/ff/a652ff71c6252df6786a32d94ce7d854.jpg',
+        'image' => 'images/2.jpg',
     ]);
 
     MenuItem::create([
@@ -34,7 +34,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Fluffy pancakes with syrup and berries.',
         'price' => 1150,
         'category' => 'breakfast',
-        'image' => 'https://th.bing.com/th/id/OIP.76-mOBgKSjhS-43zpUqF-wHaHa?w=2560&h=2560&rs=1&pid=ImgDetMain',
+        'image' => 'images/3.jpg',
     ]);
 
     MenuItem::create([
@@ -42,7 +42,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Sweet and crispy French toast.',
         'price' => 1120,
         'category' => 'breakfast',
-        'image' => 'https://th.bing.com/th/id/OIP.KZ5Wh5vYVKrdj5uecWmocwHaHa?w=720&h=720&rs=1&pid=ImgDetMain',
+        'image' => 'images/4.jpg',
     ]);
 
     MenuItem::create([
@@ -50,7 +50,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Creamy omelette filled with cheese.',
         'price' => 950,
         'category' => 'breakfast',
-        'image' => 'https://th.bing.com/th/id/OIP.ECy--_0x5s8aMz30TjnVqgHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain',
+        'image' => 'images/5.jpg',
     ]);
 
     MenuItem::create([
@@ -58,7 +58,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Refreshing yogurt bowl with fresh fruits.',
         'price' => 1050,
         'category' => 'breakfast',
-        'image' => 'https://th.bing.com/th/id/OIP.bqMa4L2z70AwzroXe315ygHaHa?w=568&h=568&rs=1&pid=ImgDetMain',
+        'image' => 'images/6.jpg',
     ]);
 
     // Appetizers
@@ -67,7 +67,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Classic Cesar salad with fresh lettuce and croutons.',
         'price' => 1100,
         'category' => 'appetizers',
-        'image' => 'https://th.bing.com/th/id/OIP.6aOPN05LoJngZJcGtfPGKgHaHa?w=520&h=520&rs=1&pid=ImgDetMain',
+        'image' => 'images/7.jpg',
     ]);
 
     MenuItem::create([
@@ -75,7 +75,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Rich and creamy Penne pasta.',
         'price' => 1250,
         'category' => 'appetizers',
-        'image' => 'https://th.bing.com/th/id/OIP.ckPJ5VaCuioGqp36Ucg1nAHaHa?w=500&h=500&rs=1&pid=ImgDetMain',
+        'image' => 'images/8.jpg',
     ]);
 
     MenuItem::create([
@@ -83,7 +83,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Toasted sandwich with fresh vegetables.',
         'price' => 1320,
         'category' => 'appetizers',
-        'image' => 'https://th.bing.com/th/id/OIP.RVaebJXtOtO1nwJitqc8oAHaHa?w=600&h=600&rs=1&pid=ImgDetMain',
+        'image' => 'images/9.jpg',
     ]);
 
     MenuItem::create([
@@ -91,7 +91,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Crispy and cheesy Mozzarella sticks.',
         'price' => 980,
         'category' => 'appetizers',
-        'image' => 'https://th.bing.com/th/id/OIP.iHv2eUJTD0QFkJwmfNsdYgHaHa?w=500&h=500&rs=1&pid=ImgDetMain',
+        'image' => 'images/10.jpg',
     ]);
 
     MenuItem::create([
@@ -99,7 +99,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Nachos loaded with cheese, jalapenos, and salsa.',
         'price' => 1050,
         'category' => 'appetizers',
-        'image' => 'https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/08/1487797315-ghk070116ykbreakfastchilaquiles.jpg?crop=1.00xw:0.667xh;0,0.189xh&resize=640:*',
+        'image' => 'images/11.jpg',
     ]);
 
     MenuItem::create([
@@ -107,7 +107,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Delicious vegetable-filled tacos.',
         'price' => 1150,
         'category' => 'appetizers',
-        'image' => 'https://latinfixins.com/wp-content/uploads/2022/04/9TLC0849.jpg',
+        'image' => 'images/12.jpg',
     ]);
 
     // Main Course
@@ -116,7 +116,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Juicy beef burger with smoky flavors.',
         'price' => 1750,
         'category' => 'main course',
-        'image' => 'https://s3-media0.fl.yelpcdn.com/bphoto/VVq6bF79w7O1phM8j3C_BA/l.jpg',
+        'image' => 'images/13.jpg',
     ]);
 
     MenuItem::create([
@@ -124,7 +124,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Rich Alfredo pasta with creamy sauce.',
         'price' => 1550,
         'category' => 'main course',
-        'image' => 'https://th.bing.com/th/id/OIP.-DS44jfNn4Eip5869gtgIwHaHa?w=1200&h=1200&rs=1&pid=ImgDetMain',
+        'image' => 'images/14.jpg',
     ]);
 
     MenuItem::create([
@@ -132,7 +132,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Classic Margarita pizza with fresh basil.',
         'price' => 1900,
         'category' => 'main course',
-        'image' => 'https://th.bing.com/th/id/OIP.vZgzb2AKDWFk55GTC8l5xAHaHa?w=600&h=600&rs=1&pid=ImgDetMain',
+        'image' => 'images/15.jpg',
     ]);
 
     MenuItem::create([
@@ -140,7 +140,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Rice bowl with fresh vegetables and grilled protein.',
         'price' => 1300,
         'category' => 'main course',
-        'image' => 'https://minimalistbaker.com/wp-content/uploads/2023/01/Salmon-Sushi-Bowls-8-600x600.jpg',
+        'image' => 'images/16.jpg',
     ]);
 
     MenuItem::create([
@@ -148,7 +148,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Grilled steak with Moroccan spices.',
         'price' => 1850,
         'category' => 'main course',
-        'image' => 'https://hips.hearstapps.com/redonline/main/gallery/4856/1-1379665769-spiced-lamb-with-persian-cous-cous.jpg?resize=480:*',
+        'image' => 'images/17.jpg',
     ]);
 
     MenuItem::create([
@@ -156,7 +156,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Classic Italian Spaghetti Bolognese.',
         'price' => 1750,
         'category' => 'main course',
-        'image' => 'https://th.bing.com/th/id/OIP.AkngZxMqrMurWICrrwa4mQAAAA?rs=1&pid=ImgDetMain',
+        'image' => 'images/18.jpg',
     ]);
 
     // Desserts
@@ -165,7 +165,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Rich and moist chocolate cake.',
         'price' => 600,
         'category' => 'desserts',
-        'image' => 'https://th.bing.com/th/id/OIP.gDN7J8eEYJq2q-73JuCqUgHaHa?w=1080&h=1080&rs=1&pid=ImgDetMain',
+        'image' => 'images/19.jpg',
     ]);
 
     MenuItem::create([
@@ -173,14 +173,14 @@ class MenuItemSeeder extends Seeder
         'description' => 'Decadent Lotus-flavored truffle.',
         'price' => 750,
         'category' => 'desserts',
-        'image' => 'https://th.bing.com/th/id/OIP.FR1QDIq-EORgPnbkq7-_fgAAAA?w=300&h=300&rs=1&pid=ImgDetMain',
+        'image' => 'images/20.jpg',
     ]);
     MenuItem::create([
         'name' => 'Strawberry Cheesecake',
         'description' => 'Creamy cheesecake with fresh strawberries.',
         'price' => 650,
         'category' => 'desserts',
-        'image' => 'https://bakerbynature.com/wp-content/uploads/2019/04/New-York-Cheesecake-17-500x500.jpg',
+        'image' => 'images/21.jpg',
     ]);
 
     // Drinks
@@ -189,7 +189,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Chilled frappe with a rich coffee flavor.',
         'price' => 800,
         'category' => 'drinks',
-        'image' => 'https://img.freepik.com/premium-photo/coffee-cup-with-fredo-ice-latte-caramel-coffee-tonic-white-background-generative-ai_721117-302.jpg',
+        'image' => 'images/22.jpg',
     ]);
 
     MenuItem::create([
@@ -197,7 +197,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Whipped coffee over iced milk.',
         'price' => 650,
         'category' => 'drinks',
-        'image' => 'https://th.bing.com/th/id/OIP.bGwS5mrlpPYnmSuALxuT7wHaHa?w=1200&h=1200&rs=1&pid=ImgDetMain',
+        'image' => 'images/23.jpg',
     ]);
 
     MenuItem::create([
@@ -205,7 +205,7 @@ class MenuItemSeeder extends Seeder
         'description' => 'Refreshing iced latte with caramel.',
         'price' => 750,
         'category' => 'drinks',
-        'image' => 'https://img.freepik.com/premium-photo/cup-iced-coffee-with-lid-open_745528-31687.jpg',
+        'image' => 'images/24.jpg',
     ]);
 }
 

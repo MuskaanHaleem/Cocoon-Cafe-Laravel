@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Edit Menu Item</h1>
-    <form action="{{ route('menu-items.update', $menuItem->id) }}" method="POST">
+    <form action="{{ route('menu-items.update', $menuItem->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
@@ -51,16 +51,23 @@
             </select>
         </div>
 
-        <!-- Image URL Field -->
+        <!-- Image Field -->
         <div class="form-group mb-3">
-            <label for="image">Image URL</label>
+            <label for="image">Image</label>
             <input 
-                type="text" 
+                type="file" 
                 name="image" 
                 id="image" 
-                class="form-control" 
-                value="{{ $menuItem->image }}" 
-                required>
+                class="form-control">
+            <small class="text-muted">Leave blank if you don't want to change the image.</small>
+        </div>
+
+        <!-- Existing Image Preview -->
+        <div class="form-group mb-3">
+            <label>Current Image</label>
+            <div>
+                <img src="{{ asset('images/' . $menuItem->image) }}" alt="{{ $menuItem->name }}" class="img-thumbnail" width="150">
+            </div>
         </div>
 
         <!-- Submit and Cancel Buttons -->

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Add New Menu Item</h1>
-    <form action="{{ route('menu-items.store') }}" method="POST">
+    <form action="{{ route('menu-items.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group mb-3">
             <label for="name">Name</label>
@@ -23,8 +23,8 @@
             </select>
         </div>
         <div class="form-group mb-3">
-            <label for="image">Image URL</label>
-            <input type="text" name="image" id="image" class="form-control" placeholder="Enter image URL" required>
+            <label for="image">Image</label>
+            <input type="file" class="form-control-file" id="image" name="image" required>
         </div>
         <button type="submit" class="btn btn-success">Save</button>
     </form>

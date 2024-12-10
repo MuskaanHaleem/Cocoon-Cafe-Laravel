@@ -21,7 +21,7 @@
         @foreach ($menuItems as $item)
             <div class="col-md-4 mb-4 recipe-card" data-category="{{ $item->category->id }}">
                 <div class="card">
-                    <img src="{{ $item->image }}" class="card-img-top" alt="{{ $item->name }}">
+                <img src="{{ asset($item->image) }}" alt="{{ $item->name }}" class="img-fluid">
                     <div class="card-body">
                         <h5 class="card-title"><strong>{{ $item->name }}</strong></h5>
                         <p class="card-text"><strong>Price:</strong> RS {{ number_format($item->price, 0) }}/-</p>
