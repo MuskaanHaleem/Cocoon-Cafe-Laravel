@@ -8,6 +8,7 @@ Cocoon Cafe is a web application for managing cafe operations. It provides APIs 
 ## Key Features
 - Manage categories (CRUD functionality).
 - Image uploads for menus and categories.
+- AJAX Implementation for search functionality
 - Role-based authentication using Laravel Passport.
 - Clean and modular structure.
 
