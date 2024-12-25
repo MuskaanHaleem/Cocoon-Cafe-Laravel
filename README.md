@@ -31,40 +31,34 @@ Cocoon Cafe is a web application for managing cafe operations. It provides APIs 
 2. Install backend dependencies:
 
    ```bash 
-   Copy code
    composer install
 
 3. Install frontend dependencies and build assets:
 
    ```bash
-   Copy code
    npm install
    npm run dev
 
 4. Copy the .env file:
 
    ```bash
-   Copy code
    cp .env.example .env
    Update .env with your database and app details.
 
 6. Set up the database:
 
    ```bash
-   Copy code
    php artisan migrate
 
 7. Generate app keys and Passport keys:
 
    ```bash
-   Copy code
    php artisan key:generate
    php artisan passport:install
 
 8. Start the server:
 
    ```bash
-   Copy code
    php artisan serve
 
 ## API Endpoints
