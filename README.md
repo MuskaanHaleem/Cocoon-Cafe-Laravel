@@ -62,74 +62,82 @@ Cocoon Cafe is a web application for managing cafe operations. It provides APIs 
    php artisan serve
 
 ## API Endpoints
-Categories
 
-1. Get All Categories
+### Categories
 
-GET /api/categories
+1. **Get All Categories**
+   - **Method:** `GET`
+   - **Endpoint:** `/api/categories`
+   - **Response:**
+     ```json
+     [
+       { "id": 1, "name": "Breakfast" },
+       { "id": 2, "name": "Lunch" }
+     ]
+     ```
 
-Response:
-  
-json
-Copy code
-[
-  { "id": 1, "name": "Breakfast" },
-  { "id": 2, "name": "Lunch" }
-]
+2. **Create Category**
+   - **Method:** `POST`
+   - **Endpoint:** `/api/categories`
+   - **Request Body:**
+     ```json
+     { "name": "Category Name" }
+     ```
 
-2. Create Category
+3. **Update Category**
+   - **Method:** `PUT`
+   - **Endpoint:** `/api/categories/{id}`
+   - **Request Body:**
+     ```json
+     { "name": "Updated Name" }
+     ```
 
-POST /api/categories
-Body:
+4. **Delete Category**
+   - **Method:** `DELETE`
+   - **Endpoint:** `/api/categories/{id}`
 
-json
-Copy code
-{ "name": "Category Name" }
-
-3. Update Category
-
-PUT /api/categories/{id}
-Body:
-
-json
-Copy code
-{ "name": "Updated Name" }
-
-4. Delete Category
-
-DELETE /api/categories/{id}
+---
 
 ## Troubleshooting
 
-Error 500
+### Common Issues and Fixes
 
-Check storage/logs/laravel.log for details.
-Verify .env configuration.
-Assets Not Loading
+#### 1. **Error 500**
+   - Check the logs at `storage/logs/laravel.log` for detailed error information.
+   - Ensure your `.env` file is correctly configured.
 
-Run npm run dev again.
-Database Issues
+#### 2. **Assets Not Loading**
+   - Rebuild frontend assets by running:
+     ```bash
+     npm run dev
+     ```
 
-Check if MySQL is running.
-Verify .env database credentials.
-Passport Errors
+#### 3. **Database Issues**
+   - Ensure MySQL service is running.
+   - Verify database credentials in the `.env` file.
 
-Re-run:
-    ```bash
-    Copy code
-    php artisan passport:install
-    Contribution Guide
+#### 4. **Passport Errors**
+   - If you encounter authentication issues, re-install Passport keys by running:
+     ```bash
+     php artisan passport:install
+     ```
 
-Create a branch:
-    ```bash
-    Copy code
-    git checkout -b feature/your-feature-name
+---
 
-Commit your changes:
-    ```bash
-    Copy code
-    git commit -m "Add feature"
-    Push and create a pull request.
+## Contribution Guide
+
+1. **Create a Branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+
+2. **Commit your chnages**
+   ```bash
+   git commit -m "Add feature"
+
+3. **Push and create a Pull request**
+   ```bash
+   git push origin feature/your-feature-name
+ 
 
 ### Author
 Muskaan Haleem
