@@ -33,7 +33,7 @@
         </div>
         <!-- Image Section -->
         <div class="col-lg-6">
-            <img src="https://caffepraha.com/wp-content/uploads/2024/09/Untitled-1-600x600.jpg" class="img-fluid rounded" alt="Breakfast Image" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="/images/home2.jpg" class="img-fluid rounded" alt="Breakfast Image" style="width: 100%; height: 70%; object-fit: cover;">
         </div>
     </div>
 </div>
@@ -43,7 +43,7 @@
     <div class="row align-items-center">
         <!-- Image Section -->
         <div class="col-lg-6">
-            <img src="https://i.pinimg.com/564x/3c/d6/45/3cd645eab4c31432b94ef0a41c035147.jpg" class="img-fluid rounded" alt="Breakfast Image">
+            <img src="/images/home3.jpg" class="img-fluid rounded" alt="Breakfast Image">
         </div>
         <!-- Text Section -->
         <div class="col-lg-6 mb-4">
@@ -79,7 +79,7 @@
         </div>
         <!-- Image Section -->
         <div class="col-lg-6">
-            <img src="https://i.pinimg.com/564x/12/9c/5a/129c5a18cad208c91e3f0709bb504ab3.jpg" class="img-fluid rounded" alt="Ambiance Image" style="width: 500px; height: auto; border-radius: 8px;">
+            <img src="/images/home4.jpg"class="img-fluid rounded" alt="Ambiance Image" style="width: 500px; height: auto; border-radius: 8px;">
         </div>
     </div>
 </div>
@@ -107,7 +107,7 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://i.pinimg.com/564x/c6/7a/ca/c67acafa70b7ef2debc1fb21e65f2ef8.jpg" class="d-block w-100" alt="..." height="400px">
+            <img src="/images/home5.jpg" class="d-block w-100" alt="..." height="400px">
             <div class="carousel-caption d-none d-md-block" style="margin-bottom: 100px;">
                 <h5>CUSTOMER FEEDBACK</h5>
                 <p>Lily S. - ⭐⭐⭐⭐⭐</p>
@@ -115,7 +115,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://i.pinimg.com/564x/ad/61/3d/ad613d12c2b1c348b7d24a61d17ff5f4.jpg" class="d-block w-100" alt="..." height="400px">
+            <img src="/images/home6.jpg" class="d-block w-100" alt="..." height="400px">
             <div class="carousel-caption d-none d-md-block" style="margin-bottom: 100px;">
                 <h5>CUSTOMER FEEDBACK</h5>
                 <p>Emma T. - ⭐⭐⭐⭐⭐</p>
@@ -123,7 +123,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://i.pinimg.com/564x/6a/cc/9e/6acc9ee4f6692e79531dd23adf458b38.jpg" class="d-block w-100" alt="..." height="400px">
+            <img src="/images/home7.jpg"class="d-block w-100" alt="..." height="400px">
             <div class="carousel-caption d-none d-md-block" style="margin-bottom: 100px;">
                 <h5>CUSTOMER FEEDBACK</h5>
                 <p>Jason K. - ⭐⭐⭐⭐⭐</p>

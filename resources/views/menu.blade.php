@@ -22,7 +22,7 @@
             </div>
             <!-- Image Section -->
             <div class="col-lg-6">
-                <img src="https://th.bing.com/th/id/OIP.QhhVm6wgyYzRpmi6RXGpfwHaE8?rs=1&pid=ImgDetMain" class="img-fluid rounded" alt="Breakfast Image">
+                <img src="/images/menu4.jpg" class="img-fluid rounded" alt="Breakfast Image">
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
             </div>
             <!-- Image Section -->
             <div class="col-lg-6">
-                <img src="https://therecipecritic.com/wp-content/uploads/2015/03/cajun_alfredo_pasta3-500x500.jpg" class="img-fluid rounded" alt="Lunch Image">
+                <img src="/images/menu5.jpg" class="img-fluid rounded" alt="Lunch Image">
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
             </div>
             <!-- Image Section -->
             <div class="col-lg-6">
-                <img src="https://th.bing.com/th/id/OIP.oiuZa6ODBYPJNTfdAyp98gHaHa?rs=1&pid=ImgDetMain" class="img-fluid rounded" alt="Dinner Image">
+                <img src="/images/menu6.jpg"class="img-fluid rounded" alt="Dinner Image">
             </div>
         </div>
     </div>

@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Services\CategoryService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
+
     public function index()
     {
-        $categories = Category::all();
+        $categories = $this->categoryService->getAllCategories();
         return view('categories.index', compact('categories'));
     }
 
@@ -20,54 +28,32 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'id' => 'required|numeric|unique:categories,id', // Validate that ID is unique
-            'name' => 'required|string|max:255',
-        ]);
-    
-        Category::create([
-            'id' => $request->id, // Save the custom ID
-            'name' => $request->name,
-            'description' => $request->description,
-        ]);
-    
-        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
+        $response = $this->categoryService->createCategory($request);
+        Session::flash('message', $response['message']);
+        Session::flash('alert-class', $response['success'] ? 'alert-success' : 'alert-danger');
+        return redirect()->route('categories.index');
     }
-
 
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $category = $this->categoryService->editCategory($id);
         return view('categories.edit', compact('category'));
     }
 
-   public function update(Request $request, $id)
-{
-    // Validate the input data
-    $request->validate([
-        'id' => 'required|numeric|unique:categories,id,' . $id, // Allow current ID but ensure uniqueness for others
-        'name' => 'required|string|max:255',
-    ]);
-
-    // Find the category by ID
-    $category = Category::findOrFail($id);
-
-    // Update the category with the validated data
-    $category->update([
-        'id' => $request->input('id'), // Update the ID
-        'name' => $request->input('name'),
-        'description' => $request->input('description'),
-    ]);
-
-    // Redirect back to the categories index with a success message
-    return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
-}
+    public function update(Request $request)
+    {
+        $response = $this->categoryService->updateCategory($request);
+        Session::flash('message', $response['message']);
+        Session::flash('alert-class', $response['success'] ? 'alert-success' : 'alert-danger');
+        return redirect()->route('categories.index');
+    }
 
     public function destroy($id)
     {
-        $category = Category::findOrFail($id); // Check if the category exists
-        $category->delete();
-        return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
+        $response = $this->categoryService->deleteCategory($id);
+        Session::flash('message', $response['message']);
+        Session::flash('alert-class', $response['success'] ? 'alert-success' : 'alert-danger');
+        return redirect()->route('categories.index');
     }
-    
+
 }
