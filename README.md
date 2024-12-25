@@ -1,4 +1,3 @@
-
 # Cocoon Cafe
 
 ## Project Overview
@@ -31,42 +30,42 @@ Cocoon Cafe is a web application for managing cafe operations. It provides APIs 
 
 2. Install backend dependencies:
 
-bash
-Copy code
-composer install
+   ```bash 
+  Copy code
+  composer install
 
 3. Install frontend dependencies and build assets:
 
-bash
-Copy code
-npm install
-npm run dev
+   ```bash
+  Copy code
+  npm install
+  npm run dev
 
 4. Copy the .env file:
 
-bash
-Copy code
-cp .env.example .env
-Update .env with your database and app details.
+   ```bash
+  Copy code
+  cp .env.example .env
+  Update .env with your database and app details.
 
 6. Set up the database:
 
-bash
-Copy code
-php artisan migrate
+   ```bash
+  Copy code
+  php artisan migrate
 
 7. Generate app keys and Passport keys:
 
-bash
-Copy code
-php artisan key:generate
-php artisan passport:install
+   ```bash
+  Copy code
+  php artisan key:generate
+  php artisan passport:install
 
 8. Start the server:
 
-bash
-Copy code
-php artisan serve
+   ```bash
+  Copy code
+  php artisan serve
 
 ## API Endpoints
 Categories
@@ -77,7 +76,7 @@ GET /api/categories
 
 Response:
 
-json
+```json
 Copy code
 [
   { "id": 1, "name": "Breakfast" },
@@ -89,7 +88,7 @@ Copy code
 POST /api/categories
 Body:
 
-json
+```json
 Copy code
 { "name": "Category Name" }
 
@@ -98,7 +97,7 @@ Copy code
 PUT /api/categories/{id}
 Body:
 
-json
+```json
 Copy code
 { "name": "Updated Name" }
 
@@ -107,6 +106,7 @@ Copy code
 DELETE /api/categories/{id}
 
 ## Troubleshooting
+
 Error 500
 
 Check storage/logs/laravel.log for details.
@@ -121,19 +121,22 @@ Verify .env database credentials.
 Passport Errors
 
 Re-run:
-bash
+```bash
 Copy code
 php artisan passport:install
 Contribution Guide
+
 Create a branch:
-bash
+```bash
 Copy code
 git checkout -b feature/your-feature-name
+
 Commit your changes:
-bash
+```bash
 Copy code
 git commit -m "Add feature"
 Push and create a pull request.
 
 ### Author
 Muskaan Haleem
+
